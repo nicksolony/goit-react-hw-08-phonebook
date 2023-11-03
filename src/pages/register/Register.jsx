@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Form, FormLabel } from "./Register.styled";
+import { useAddUserMutation } from "redux/auth/authSlice";
+import { toast } from "react-hot-toast";
 // import { useDispatch } from 'react-redux';
 // import { authOperations } from '../redux/auth';
 
@@ -7,7 +9,9 @@ export const Register = () => {
     // const dispatch = useDispatch();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+  const [password, setPassword] = useState('');
+  
+  const [addUser] = useAddUserMutation();
 
       const handleChange = ({ target: { name, value } }) => {
         switch (name) {
@@ -20,12 +24,26 @@ export const Register = () => {
             default:
                 return;
         }
+      };
+  
+    const handleSignUp = async data => {
+      try {
+      await addUser(data);
+      toast.success(`Successfully signed up ${name}!`)
+    } catch (error) {
+      toast.error(data.message)
+    }
+  };
+
+  const registerUser = (name, email, password) => {
+    let newUser = { name, email, password };
+    handleSignUp(newUser);
   };
 
       const handleSubmit = e => {
           e.preventDefault();
           console.log({name, email, password});
-        //   dispatch(authOperations.register({ name, email, password }));
+        registerUser(name, email, password);
             setName('');
             setEmail('');
             setPassword('');
