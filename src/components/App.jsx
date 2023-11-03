@@ -10,6 +10,8 @@ import { Toaster } from 'react-hot-toast';
 import { Home } from 'pages/home/Home';
 import { Container } from './Container/Container';
 import { Navigation } from './Navigation/Navigation';
+import { Routes, Route } from 'react-router-dom';
+import Register  from 'pages/register/Register';
 
 
 export const App = () => {
@@ -20,8 +22,11 @@ export const App = () => {
     
     return (
       <Container>
-        <Navigation/>
-        <Home/>
+        <Navigation />
+        <Routes>
+          <Route exact path="/" element={<Home/>}/>
+          <Route path="/register" element={<Register/>}/>
+        </Routes>
         <div><Toaster/></div>
         <h2>Phonebook</h2>
         <ContactForm contacts={contacts}/>
@@ -40,7 +45,7 @@ export const App = () => {
 
 
         
-
+      
       </Container>
     );
   };

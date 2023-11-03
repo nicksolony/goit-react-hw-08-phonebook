@@ -4,9 +4,9 @@ export const UserMenu = () => {
 
     return (
         <UserMenuContainer>
-            <WelcomeMessage>Welcome, This should be username</WelcomeMessage>
+            <WelcomeMessage>mango@mail.com</WelcomeMessage>
             <button type="button" onClick={() => console.log("i want to sign out")}>
-            Log Out
+            Logout
             </button>
         </UserMenuContainer>
     );
