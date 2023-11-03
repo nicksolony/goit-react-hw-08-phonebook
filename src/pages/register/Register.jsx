@@ -3,7 +3,7 @@ import { Form, FormLabel } from "./Register.styled";
 // import { useDispatch } from 'react-redux';
 // import { authOperations } from '../redux/auth';
 
-const Register = () => {
+export const Register = () => {
     // const dispatch = useDispatch();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -66,5 +66,3 @@ const Register = () => {
     </div>
       );  
 };
-
-export default Register;

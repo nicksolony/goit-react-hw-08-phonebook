@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { Form, FormLabel } from "./Login.styled";
 // import { useDispatch } from 'react-redux';
 // import { authOperations } from '../redux/auth';
 
-export const Register = () => {
+export const Login = () => {
     // const dispatch = useDispatch();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -28,31 +29,31 @@ export const Register = () => {
 
       return (
     <div>
-      <h1>Страница логина</h1>
+      <h1>Login Page</h1>
 
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
-          Почта
+      <Form onSubmit={handleSubmit} autoComplete="off">
+        <FormLabel>
+          Email
           <input
             type="email"
             name="email"
             value={email}
             onChange={handleChange}
           />
-        </label>
+        </FormLabel>
 
-        <label style={styles.label}>
-          Пароль
+        <FormLabel>
+          Password
           <input
             type="password"
             name="password"
             value={password}
             onChange={handleChange}
           />
-        </label>
+        </FormLabel>
 
-        <button type="submit">Войти</button>
-      </form>
+        <button type="submit">Login</button>
+      </Form>
     </div>
       );
     

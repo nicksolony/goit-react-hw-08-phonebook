@@ -11,7 +11,8 @@ import { Home } from 'pages/home/Home';
 import { Container } from './Container/Container';
 import { Navigation } from './Navigation/Navigation';
 import { Routes, Route } from 'react-router-dom';
-import Register  from 'pages/register/Register';
+import {Register}  from 'pages/register/Register';
+import { Login } from 'pages/login/Login';
 
 
 export const App = () => {
@@ -25,7 +26,8 @@ export const App = () => {
         <Navigation />
         <Routes>
           <Route exact path="/" element={<Home/>}/>
-          <Route path="/register" element={<Register/>}/>
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login/>}/>
         </Routes>
         <div><Toaster/></div>
         <h2>Phonebook</h2>
