@@ -6,9 +6,6 @@ export const Navigation = () => {
 
     return (
     <Header>
-            <NavButton  to="/">
-                Home
-            </NavButton>
             <NavButton to="/contacts">
                 Contacts
             </NavButton>
