@@ -7,6 +7,8 @@ import { filterSelector } from 'redux/filter/filterSlice';
 import { useGetContactsQuery } from "redux/contacts/contactsSlice";
 import { ThreeDots } from 'react-loader-spinner';
 import { Toaster } from 'react-hot-toast';
+import { Home } from 'pages/home/Home';
+import { Container } from './Container/Container';
 
 
 export const App = () => {
@@ -16,17 +18,8 @@ export const App = () => {
 
     
     return (
-      <div style={{
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'top',
-        alignItems: 'flex-start',
-        marginLeft:'50px',
-        fontSize: 18,
-        color: '#010101'
-      }}
-      >
+      <Container>
+        <Home/>
         <div><Toaster/></div>
         <h2>Phonebook</h2>
         <ContactForm contacts={contacts}/>
@@ -46,6 +39,6 @@ export const App = () => {
 
         
 
-      </div>
+      </Container>
     );
   };
