@@ -9,6 +9,7 @@ import { ThreeDots } from 'react-loader-spinner';
 import { Toaster } from 'react-hot-toast';
 import { Home } from 'pages/home/Home';
 import { Container } from './Container/Container';
+import { Navigation } from './Navigation/Navigation';
 
 
 export const App = () => {
@@ -19,6 +20,7 @@ export const App = () => {
     
     return (
       <Container>
+        <Navigation/>
         <Home/>
         <div><Toaster/></div>
         <h2>Phonebook</h2>
