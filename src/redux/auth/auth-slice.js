@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import authOperations from './auth-operations';
+import toast from 'react-hot-toast';
 
 const initialState = {
   user: { name: null, email: null },

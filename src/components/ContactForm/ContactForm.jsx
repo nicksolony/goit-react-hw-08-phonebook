@@ -11,7 +11,6 @@ export const ContactForm = ({contacts}) => {
   // const contacts = useSelector(contactsSelector).contacts;
   
   const [addContact] = useAddContactMutation();
-  console.log(addContact);  
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
 
