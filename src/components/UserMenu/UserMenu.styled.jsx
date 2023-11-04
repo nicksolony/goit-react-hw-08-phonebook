@@ -5,7 +5,8 @@ export const UserMenuContainer = styled.div`
     align-items: center;
 `;
 
-export const WelcomeMessage = styled.span`
+export const UserEmail = styled.span`
     font-weight: 700;
     margin-right: 12px;
+    color: #0000FF;
 `;
