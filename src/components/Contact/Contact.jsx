@@ -5,7 +5,7 @@ import { ContactItem } from './Contact.styled';
 import { useDeleteContactMutation } from "redux/contacts/contactsSlice";
 
 export const Contact = ({ contact }) => {
-    let { id, name, phone } = contact;
+    let { id, name, number } = contact;
     // const dispatch = useDispatch();
     const [deleteContact, { isLoading }] = useDeleteContactMutation();
 
@@ -13,7 +13,7 @@ export const Contact = ({ contact }) => {
     return (
         <ContactItem key={id}>
 
-            {name}: {phone}
+            {name}: {number}
 
             <button onClick={()=>(deleteContact(id))} disabled={isLoading}>
                 Delete

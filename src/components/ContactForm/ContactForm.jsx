@@ -12,7 +12,7 @@ export const ContactForm = ({contacts}) => {
   
   const [addContact] = useAddContactMutation();
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState('');
 
   const handleDataInput = (e) => {
       let { id, value } = e.target;
@@ -20,8 +20,8 @@ export const ContactForm = ({contacts}) => {
         case 'name':
           setName(value);
           break;
-        case 'phone':
-          setPhone(value);
+        case 'number':
+          setNumber(value);
           break;
         default:
           break;
@@ -38,8 +38,8 @@ export const ContactForm = ({contacts}) => {
   };
 
     
-  const createNewContact = (name, phone) => {
-    let newContact = { name, phone };
+  const createNewContact = (name, number) => {
+    let newContact = { name, number };
     // dispatch(addContact(newContact));
     handleAddingNewContact(newContact);
     reset();
@@ -50,13 +50,13 @@ export const ContactForm = ({contacts}) => {
       
       let normalizedName = name.toLowerCase();
       
-      !contacts.find((contact) => contact.name.toLowerCase() === normalizedName) ? createNewContact(name, phone) : toast.error(`${name} is already in contacts.`);
+      !contacts.find((contact) => contact.name.toLowerCase() === normalizedName) ? createNewContact(name, number) : toast.error(`${name} is already in contacts.`);
       e.target.name.focus();
     };
 
     const reset = () => {
       setName('');
-      setPhone('');
+      setNumber('');
     };
 
     
@@ -75,14 +75,14 @@ export const ContactForm = ({contacts}) => {
                 value={name}
                 onChange={handleDataInput}
               />
-              <label htmlFor='phone'>Phone number</label>
+              <label htmlFor='number'>Phone number</label>
               <input
                 type="tel"
                 pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
                 title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                 required
-                id='phone'
-                value={phone}
+                id='number'
+                value={number}
                 onChange={handleDataInput}
               />
               
