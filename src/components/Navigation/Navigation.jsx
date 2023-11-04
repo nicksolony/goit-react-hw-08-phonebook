@@ -1,9 +1,11 @@
 import { AuthNav } from 'components/AuthNav/AuthNav';
 import { Header, NavButton } from './Navigation.styled';
 import { UserMenu } from 'components/UserMenu/UserMenu';
+import { useSelector } from 'react-redux';
+import { authSelectors } from 'redux/auth';
 
 export const Navigation = () => {
-
+  const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
     return (
     <Header>
             <NavButton to="/">
@@ -12,8 +14,7 @@ export const Navigation = () => {
             <NavButton to="/contacts">
                 Contacts
             </NavButton>
-            <AuthNav />
-            <UserMenu/>
+            {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </Header>
   );
 
