@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Form, FormLabel } from "./Login.styled";
-// import { useDispatch } from 'react-redux';
-// import { authOperations } from '../redux/auth';
+import { useDispatch } from 'react-redux';
+import { authOperations } from '../../redux/auth';
 
 export const Login = () => {
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -21,8 +21,7 @@ export const Login = () => {
 
       const handleSubmit = e => {
           e.preventDefault();
-          //   dispatch(authOperations.logIn({ email, password }));
-          console.log({email, password});
+          dispatch(authOperations.logIn({ email, password }));
           setEmail('');
           setPassword('');
         };
