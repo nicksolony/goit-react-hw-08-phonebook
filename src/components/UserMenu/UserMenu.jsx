@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { UserEmail, UserMenuContainer } from "./UserMenu.styled";
-import { authSelectors } from "redux/auth";
+import { authOperations, authSelectors } from "redux/auth";
 
 
 export const UserMenu = () => {
@@ -12,7 +12,7 @@ export const UserMenu = () => {
     return (
         <UserMenuContainer>
             <UserEmail>{email}</UserEmail>
-            <button type="button" onClick={() => console.log("i want to sign out")}>
+            <button type="button" onClick={() => dispatch(authOperations.logOut())}>
             Logout
             </button>
         </UserMenuContainer>
