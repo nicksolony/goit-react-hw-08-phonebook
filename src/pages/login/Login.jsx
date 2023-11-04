@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Form, FormLabel } from "./Login.styled";
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
+import { contactsApi } from "redux/contacts/contactsSlice";
 
 export const Login = () => {
     const dispatch = useDispatch();
@@ -20,7 +21,8 @@ export const Login = () => {
   };
 
       const handleSubmit = e => {
-          e.preventDefault();
+        e.preventDefault();
+          dispatch(contactsApi.util.resetApiState())
           dispatch(authOperations.logIn({ email, password }));
           setEmail('');
           setPassword('');
