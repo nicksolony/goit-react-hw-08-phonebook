@@ -21,11 +21,11 @@ export const App = () => {
     dispatch(authOperations.fetchCurrentUser());
   }, [dispatch]);
 
-    
     return (
       <Container>
         
         {isFetchingCurrentUser ? (
+  
           <h1>Loading User Data</h1>
         ) : (
             <>

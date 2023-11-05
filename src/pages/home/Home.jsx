@@ -3,7 +3,7 @@ import { authSelectors } from 'redux/auth';
 
 export const Home = () => {
     const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
-console.log(isLoggedIn);
+    // console.log(isLoggedIn);
     return (
         
         <>

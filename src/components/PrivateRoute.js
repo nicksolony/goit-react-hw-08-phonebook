@@ -8,8 +8,6 @@ export default function PrivateRoute({
   ...routeProps
 }) {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
-  
-    
       if (isLoggedIn) {
     return <Outlet />
   } else {
